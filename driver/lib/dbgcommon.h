@@ -26,5 +26,5 @@ const char *dbg_command(UINT32 command);
 
 #endif	
 
-#define ERROR(fmt, ...)	DbgPrintEx(MY_DFPLTR, DPFLTR_ERROR_LEVEL, DRVPREFIX ":(EE) " fmt "\n", ## __VA_ARGS__)
-#define INFO(fmt, ...)	DbgPrintEx(MY_DFPLTR, DPFLTR_INFO_LEVEL, DRVPREFIX ": " fmt "\n", ## __VA_ARGS__)
+#define ERROR(fmt, ...)	DbgPrintEx(MY_DFPLTR, DPFLTR_ERROR_LEVEL, DRVPREFIX ":(EE) " fmt, ## __VA_ARGS__)
+#define INFO(fmt, ...)	DbgPrintEx(MY_DFPLTR, DPFLTR_INFO_LEVEL, DRVPREFIX ": " fmt, ## __VA_ARGS__)
