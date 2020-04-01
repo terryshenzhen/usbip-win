@@ -3,15 +3,15 @@
 #include <ntddk.h>
 
 /* DPFLTR_SYSTEM_ID emits too many unrelated kernel logs */
-#define MY_DFPLTR	DPFLTR_IHVDRIVER_ID
+#define MY_DPFLTR	DPFLTR_IHVDRIVER_ID
 
 #ifdef DBG
 
 #include "usbip_proto.h"
 
-#define DBGE(part, fmt, ...)	DbgPrintEx(MY_DFPLTR, DPFLTR_MASK | ((part) << 4) | DPFLTR_ERROR_LEVEL, DRVPREFIX ":(EE) " fmt, ## __VA_ARGS__)
-#define DBGW(part, fmt, ...)	DbgPrintEx(MY_DFPLTR, DPFLTR_MASK | ((part) << 4) | DPFLTR_WARNING_LEVEL, DRVPREFIX ":(WW) " fmt, ## __VA_ARGS__)
-#define DBGI(part, fmt, ...)	DbgPrintEx(MY_DFPLTR, DPFLTR_MASK | ((part) << 4) | DPFLTR_INFO_LEVEL, DRVPREFIX ": " fmt, ## __VA_ARGS__)
+#define DBGE(part, fmt, ...)	DbgPrintEx(MY_DPFLTR, DPFLTR_MASK | ((part) << 4) | DPFLTR_ERROR_LEVEL, DRVPREFIX ":(EE) " fmt, ## __VA_ARGS__)
+#define DBGW(part, fmt, ...)	DbgPrintEx(MY_DPFLTR, DPFLTR_MASK | ((part) << 4) | DPFLTR_WARNING_LEVEL, DRVPREFIX ":(WW) " fmt, ## __VA_ARGS__)
+#define DBGI(part, fmt, ...)	DbgPrintEx(MY_DPFLTR, DPFLTR_MASK | ((part) << 4) | DPFLTR_INFO_LEVEL, DRVPREFIX ": " fmt, ## __VA_ARGS__)
 
 int dbg_snprintf(char *buf, int size, const char *fmt, ...);
 
@@ -26,5 +26,5 @@ const char *dbg_command(UINT32 command);
 
 #endif	
 
-#define ERROR(fmt, ...)	DbgPrintEx(MY_DFPLTR, DPFLTR_ERROR_LEVEL, DRVPREFIX ":(EE) " fmt, ## __VA_ARGS__)
-#define INFO(fmt, ...)	DbgPrintEx(MY_DFPLTR, DPFLTR_INFO_LEVEL, DRVPREFIX ": " fmt, ## __VA_ARGS__)
+#define ERROR(fmt, ...)	DbgPrintEx(MY_DPFLTR, DPFLTR_ERROR_LEVEL, DRVPREFIX ":(EE) " fmt, ## __VA_ARGS__)
+#define INFO(fmt, ...)	DbgPrintEx(MY_DPFLTR, DPFLTR_INFO_LEVEL, DRVPREFIX ": " fmt, ## __VA_ARGS__)
