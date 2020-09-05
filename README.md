@@ -150,5 +150,8 @@ Windows Registry Editor Version 5.00
 # dmesg --follow | tee kernel_log.txt
 ```
 
+#### there are verison on windows 10 and arm platform. user can download them directly. they are OK
+
+
 <hr>
 <sub>This project was supported by Basic Science Research Program through the National Research Foundation of Korea(NRF) funded by the Ministry of Education(2016R1A6A3A11930295).</sub>
